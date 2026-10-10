@@ -1,0 +1,29 @@
+# Copy this file to monitors.toml and edit it.
+
+title = "Service status"
+
+# How many checks in a row must fail before an incident is opened.
+failure_threshold = 2
+
+# Optional: a Slack or Discord incoming webhook to alert when something goes down or recovers.
+# webhook_url = "https://hooks.slack.com/services/..."
+
+# How long to keep individual check results.
+retention_days = 90
+
+[[monitor]]
+name = "GitHub"
+url = "https://github.com"
+interval = 60
+
+[[monitor]]
+name = "GitHub API"
+url = "https://api.github.com/zen"
+interval = 60
+timeout = 5
+
+[[monitor]]
+name = "Python docs"
+url = "https://docs.python.org/3/"
+interval = 120
+expect_text = "Python"
